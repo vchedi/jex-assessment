@@ -1,0 +1,334 @@
+{
+  "info": {
+    "_postman_id": "b02d0737-6587-4811-a6a8-c9bf3d62c32f",
+    "name": "Jex API",
+    "description": "Company endpoints for Jex assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52110494",
+    "_collection_link": "https://go.postman.co/collection/52110494-b02d0737-6587-4811-a6a8-c9bf3d62c32f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Company",
+      "item": [
+        {
+          "name": "Create (Working)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jex BV 222222\",\n  \"street\": \"Hoofdstraat\",\n  \"houseNumber\": \"10\",\n  \"zipCode\": \"1234AB\",\n  \"location\": \"Amsterdam\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/company",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "company"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create (Error)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"street\": \"Hoofdstraat\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/company",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "company"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Companies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Company",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Company"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Company",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Company/19E1F026-FB01-F111-8D6A-9009DF062FDA",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Company",
+                "19E1F026-FB01-F111-8D6A-9009DF062FDA"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Company",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jex BV Updated 3333\",\n  \"street\": \"Hoofdstraat 33\",\n  \"houseNumber\": \"12\",\n  \"zipCode\": \"1234AB\",\n  \"location\": \"Amsterdam\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Company/EF59F6F7-FC01-F111-8D6A-9009DF062FDA",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Company",
+                "EF59F6F7-FC01-F111-8D6A-9009DF062FDA"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "US2 - Get Active Companies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Company/active-companies",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Company",
+                "active-companies"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vacancy",
+      "item": [
+        {
+          "name": "Get All Vacancies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Vacancy",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Vacancy"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Published Vacancies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Vacancy?published=true\n",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Vacancy"
+              ],
+              "query": [
+                {
+                  "key": "published",
+                  "value": "true\n"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Unpublished Vacancies Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Vacancy?published=false\n",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Vacancy"
+              ],
+              "query": [
+                {
+                  "key": "published",
+                  "value": "false\n"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "US3 - Create Vacancy (Working)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Backend Developer 2222\",\n  \"description\": \"Building APIs and services 2222\",\n  \"published\": true,\n  \"companyId\": \"EF59F6F7-FC01-F111-8D6A-9009DF062FDA\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Vacancy",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Vacancy"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "US3 - Create Vacancy (Error)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Building APIs and services 2222\",\n  \"published\": true,\n  \"companyId\": \"D6733F92-1E01-F111-8D6A-9009DF062FDA\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Vacancy",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Vacancy"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Vacancy",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/Vacancy/1DEFDA7A-FB01-F111-8D6A-9009DF062FDA",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Vacancy",
+                "1DEFDA7A-FB01-F111-8D6A-9009DF062FDA"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Vacancy",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Senior Backend Developer 3333\",\n  \"description\": \"Working on API 33333\",\n  \"published\": true,\n  \"companyId\": \"EF59F6F7-FC01-F111-8D6A-9009DF062FDA\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/Vacancy/06D08B18-FD01-F111-8D6A-9009DF062FDA",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "Vacancy",
+                "06D08B18-FD01-F111-8D6A-9009DF062FDA"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:5001",
+      "type": "string"
+    }
+  ]
+}
